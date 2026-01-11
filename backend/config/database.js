@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 exports.connectDB = async () => {
   try {
-    const conn = await mongoose.connect('mongodb+srv://rishi:Rishi1234@cluster0.uaicufx.mongodb.net/primetrade?retryWrites=true&w=majority', {
+    const conn = await mongoose.connect(process.env.MONGODB_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
